@@ -1,14 +1,13 @@
-class toUpper:
+class ToUpper:
     def __init__(self):
-        self.text = ""
+        self.letter = ''
     
-    def getString(self):
-        self.text = input("Enter: ")
-    
-
-    def printString(self):
-        print(self.text.upper())
-
-string_manipulator = toUpper()
-string_manipulator.getString()  
-string_manipulator.printString()  
+    def GetString(self):
+        self.letter = input("Enter: ")
+        
+    def PrintString(self):
+        print(self.letter.upper())
+        
+a = ToUpper()
+a.GetString()
+a.PrintString()

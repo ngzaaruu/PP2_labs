@@ -1,26 +1,33 @@
 class Account:
-    def __init__(self, owner, balance=0):
-        self.owner = owner
-        self.balance = balance
-    
-    def deposit(self, amount):
-        if amount > 0:
-            self.balance += amount
-            print(f"deposit: {amount}. new balance: {self.balance}")
-        else:
-            print("deposit amount should be greater than zero.")
-    
-    def withdraw(self, amount):
-        if amount > 0 and amount <= self.balance:
-            self.balance -= amount
-            print(f"withdrawal: {amount}. new balance: {self.balance}")
-        else:
-            print("insufficient funds or invalid withdrawal amount.")
-    
-# Example usage
-account = Account("Aruzhan", 1000)
+    def __init__(self):
+        self.owner = input("Enter a name: ")
+        self.balance = int(input("Enter a balance: "))  # 50000
+        self.pin = int(input("Enter pin: "))
 
-account.deposit(200)   
-account.withdraw(300)  
-account.withdraw(1500)
+    def deposit(self):
+        print(self.balance)
 
+    def withdraw(self):
+        pinCode = int(input("Enter pinCode"))
+        if pinCode == self.pin:
+            drawbalance = int(input("Enter a drawBalance: "))
+            if(self.balance - drawbalance >= 0):
+                self.balance -= drawbalance
+            else:
+                print("Недостаточно средств!")
+        else:
+            print("Good")
+
+print("Hello, can you enter some info about you?")
+a1 = Account()
+while(True):
+    print("[1] get Total Balance")
+    print("[2] withdraw")
+    print("[0] exit")
+    choice = int(input())
+    if choice == 0:
+        break
+    elif choice == 1:
+        a1.deposit()
+    elif choice == 2:
+        a1.withdraw()

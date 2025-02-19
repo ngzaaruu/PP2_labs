@@ -1,8 +1,6 @@
-def fahrenheit_to_celsius(f):
-    c = (5 / 9) * (f - 32)
-    return c
+grams = float(input())
+def grams_to_ounces(grams):
+    return grams / 28
 
-f = float(input("Enter:"))
-c = fahrenheit_to_celsius(f)
-
-print(f"{f} °F = {c:.2f} °C")
+ounces = grams_to_ounces(grams)
+print(f"{grams} grams = {ounces} ounces")
